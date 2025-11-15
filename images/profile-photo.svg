@@ -1,0 +1,12 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="profileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+</linearGradient>
+</defs>
+<circle cx="150" cy="150" r="150" fill="url(#profileGradient)"/>
+<circle cx="150" cy="120" r="45" fill="white" opacity="0.9"/>
+<path d="M 80 220 C 80 190, 110 170, 150 170 C 190 170, 220 190, 220 220 L 220 250 L 80 250 Z" fill="white" opacity="0.9"/>
+<text x="150" y="280" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">HARSHAL PAREKH</text>
+</svg>

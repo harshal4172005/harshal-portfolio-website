@@ -1,0 +1,24 @@
+<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="stockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+<stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+</linearGradient>
+</defs>
+<rect width="400" height="250" fill="url(#stockGradient)" rx="10"/>
+<rect x="50" y="50" width="300" height="120" fill="white" opacity="0.9" rx="8"/>
+<path d="M 70 150 L 100 130 L 130 140 L 160 110 L 190 120 L 220 90 L 250 100 L 280 80 L 310 95 L 330 75" stroke="#fa709a" stroke-width="4" fill="none"/>
+<circle cx="100" cy="130" r="3" fill="#fa709a"/>
+<circle cx="160" cy="110" r="3" fill="#fa709a"/>
+<circle cx="220" cy="90" r="3" fill="#fa709a"/>
+<circle cx="280" cy="80" r="3" fill="#fa709a"/>
+<circle cx="330" cy="75" r="3" fill="#fa709a"/>
+<rect x="60" y="60" width="50" height="30" fill="#fa709a" opacity="0.3" rx="4"/>
+<text x="85" y="78" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">AAPL</text>
+<text x="85" y="88" font-family="Arial, sans-serif" font-size="8" fill="#333" text-anchor="middle">$150.25</text>
+<rect x="120" y="60" width="50" height="30" fill="#fa709a" opacity="0.3" rx="4"/>
+<text x="145" y="78" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">GOOGL</text>
+<text x="145" y="88" font-family="Arial, sans-serif" font-size="8" fill="#333" text-anchor="middle">$2850.50</text>
+<text x="200" y="200" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">REAL-TIME STOCK DATA</text>
+<text x="200" y="220" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Google Finance Scraping</text>
+</svg>

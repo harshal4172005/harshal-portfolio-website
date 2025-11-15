@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio Test & Preview</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: #f8f9fa; 
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .preview-frame { 
+            width: 100%; 
+            height: 80vh; 
+            border: none; 
+            border-radius: 10px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            background: white;
+        }
+        .controls { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .device-buttons { display: flex; gap: 10px; margin-bottom: 15px; }
+        .device-btn { 
+            padding: 8px 16px; 
+            border: 2px solid #6366f1; 
+            background: white; 
+            color: #6366f1; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+        }
+        .device-btn.active { background: #6366f1; color: white; }
+        .checklist { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin-top: 20px;
+        }
+        .check-item { 
+            padding: 15px; 
+            background: #f8f9fa; 
+            border-radius: 8px; 
+            border-left: 4px solid #10b981;
+        }
+        .check-item input { margin-right: 10px; }
+        .progress-bar { 
+            width: 100%; 
+            height: 8px; 
+            background: #e9ecef; 
+            border-radius: 4px; 
+            overflow: hidden; 
+            margin: 15px 0;
+        }
+        .progress-fill { 
+            height: 100%; 
+            background: linear-gradient(45deg, #667eea, #764ba2); 
+            width: 0%; 
+            transition: width 0.3s ease;
+        }
+        .status { 
+            text-align: center; 
+            padding: 20px; 
+            margin-top: 20px; 
+            border-radius: 10px;
+        }
+        .ready { background: #d1fae5; color: #059669; }
+        .needs-work { background: #fef3c7; color: #d97706; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Portfolio Preview & Testing</h1>
+        
+        <div class="controls">
+            <h3>📱 Device Preview</h3>
+            <div class="device-buttons">
+                <button class="device-btn active" onclick="setDevice('desktop')">🖥️ Desktop</button>
+                <button class="device-btn" onclick="setDevice('tablet')">📱 Tablet</button>
+                <button class="device-btn" onclick="setDevice('mobile')">📱 Mobile</button>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <p id="progressText">Complete the checklist to ensure your portfolio is ready!</p>
+        </div>
+
+        <iframe id="previewFrame" class="preview-frame" src="index.html"></iframe>
+
+        <div class="checklist">
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    ✅ Website loads correctly without errors
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    📱 Mobile responsive design works
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    🖼️ All images load properly (or placeholders shown)
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    🧭 Navigation menu works on all devices
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    📧 Contact form opens email client correctly
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    🔗 All social links point to correct profiles
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    🎨 Animations and hover effects work smoothly
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    📝 All text content is personalized and accurate
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    🏗️ BUILD section showcases automation projects
+                </label>
+            </div>
+            <div class="check-item">
+                <label>
+                    <input type="checkbox" onchange="updateProgress()">
+                    ⚡ Website loads quickly (under 3 seconds)
+                </label>
+            </div>
+        </div>
+
+        <div class="status" id="status">
+            <h3>Portfolio Status: Getting Ready...</h3>
+            <p>Complete the checklist above to ensure your portfolio is ready for deployment!</p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0;">
+            <h2>🌟 Next Steps</h2>
+            <p><strong>Once testing is complete:</strong></p>
+            <ol style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li>Replace placeholder images with your actual photos</li>
+                <li>Update all contact information and project links</li>
+                <li>Test on multiple devices and browsers</li>
+                <li>Choose a hosting platform (GitHub Pages recommended)</li>
+                <li>Deploy your portfolio and share it with the world!</li>
+            </ol>
+            
+            <div style="margin-top: 25px;">
+                <a href="deploy.html" style="background: white; color: #6366f1; padding: 12px 24px; text-decoration: none; border-radius: 25px; font-weight: 500; margin: 0 10px;">📋 Deployment Guide</a>
+                <a href="index.html" target="_blank" style="background: rgba(255,255,255,0.2); color: white; padding: 12px 24px; text-decoration: none; border-radius: 25px; font-weight: 500; margin: 0 10px;">🔍 Full Preview</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setDevice(type) {
+            const frame = document.getElementById('previewFrame');
+            const buttons = document.querySelectorAll('.device-btn');
+            
+            // Remove active class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Set frame size based on device type
+            switch(type) {
+                case 'desktop':
+                    frame.style.width = '100%';
+                    frame.style.height = '80vh';
+                    break;
+                case 'tablet':
+                    frame.style.width = '768px';
+                    frame.style.height = '1024px';
+                    frame.style.margin = '0 auto';
+                    break;
+                case 'mobile':
+                    frame.style.width = '375px';
+                    frame.style.height = '667px';
+                    frame.style.margin = '0 auto';
+                    break;
+            }
+        }
+
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const total = checkboxes.length;
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const percentage = (checked / total) * 100;
+            
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const status = document.getElementById('status');
+            
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = `Progress: ${checked}/${total} items completed (${Math.round(percentage)}%)`;
+            
+            if (percentage === 100) {
+                status.className = 'status ready';
+                status.innerHTML = '<h3>🎉 Portfolio Ready for Deployment!</h3><p>All tests passed! Your portfolio is ready to go live.</p>';
+            } else if (percentage >= 70) {
+                status.className = 'status needs-work';
+                status.innerHTML = '<h3>🔧 Almost Ready!</h3><p>Just a few more items to check before deployment.</p>';
+            } else {
+                status.className = 'status';
+                status.innerHTML = '<h3>🚧 Portfolio Status: In Progress</h3><p>Complete more items from the checklist above.</p>';
+            }
+        }
+
+        // Auto-check items that can be verified
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if website loads
+            setTimeout(() => {
+                const frame = document.getElementById('previewFrame');
+                frame.onload = function() {
+                    const firstCheckbox = document.querySelector('input[type="checkbox"]');
+                    if (firstCheckbox && !firstCheckbox.checked) {
+                        firstCheckbox.checked = true;
+                        updateProgress();
+                    }
+                };
+            }, 2000);
+
+            // Initial progress update
+            updateProgress();
+
+            // Add some helpful tooltips
+            const checkItems = document.querySelectorAll('.check-item');
+            checkItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+        });
+
+        // Performance testing
+        function testPageSpeed() {
+            const startTime = performance.now();
+            const frame = document.getElementById('previewFrame');
+            
+            frame.onload = function() {
+                const loadTime = performance.now() - startTime;
+                console.log(`Portfolio loaded in ${loadTime.toFixed(2)}ms`);
+                
+                if (loadTime < 3000) {
+                    console.log('✅ Great loading speed!');
+                } else {
+                    console.log('⚠️ Consider optimizing images for faster loading');
+                }
+            };
+        }
+
+        // Start performance test
+        testPageSpeed();
+    </script>
+</body>
+</html>
